@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62f3a2a4-930c-445f-9ed6-7796925c7b2a" name="Changes" comment="create">
-      <change afterPath="$PROJECT_DIR$/context.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aiogram_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context.txt" beforeDir="false" afterPath="$PROJECT_DIR$/context.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mistral.py" beforeDir="false" afterPath="$PROJECT_DIR$/mistral.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732526956145</updated>
-      <workItem from="1732526957064" duration="2775000" />
+      <workItem from="1732526957064" duration="5713000" />
     </task>
     <task id="LOCAL-00001" summary="create">
       <option name="closed" value="true" />
@@ -101,7 +101,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="create" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/JP_AUTO_BOT$aiogram_ai.coverage" NAME="aiogram_ai Coverage Results" MODIFIED="1732529425332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/JP_AUTO_BOT$aiogram_ai.coverage" NAME="aiogram_ai Coverage Results" MODIFIED="1732532692677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/JP_AUTO_BOT$mistral.coverage" NAME="mistral Coverage Results" MODIFIED="1732529369125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

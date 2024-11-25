@@ -19,10 +19,14 @@ async def start_cmd(message: types.Message):
 
 @dp.message()
 async def question(message: types.Message):
-    print(message.from_user.username, message.text)
+    if message.from_user.id not in mistral.history:
+        id_user = message.from_user.id
+        mistral.history[id_user] = [{"role": "system", "content": mistral.content_edu}]
+        print(mistral.history)
+    print(message.from_user.username,"|", message.text)
     id_user = message.from_user.id
     mistral.question = message.text
-    response = mistral.get_chat_response(id_user, message.text)
+    response = mistral.get_chat_response(id_user, message.from_user.username, message.text)
     await message.answer(response)
 
 async def main() -> None:

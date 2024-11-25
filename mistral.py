@@ -12,7 +12,7 @@ client = Mistral(api_key=api_key)
 history = {}
 
 
-def get_chat_response(id, question):
+def get_chat_response(id, user_name, question):
     # Добавляем вопрос пользователя в историю
     history[id].append({"role": "user", "content": question})
 
@@ -27,6 +27,7 @@ def get_chat_response(id, question):
 
     agent_message = response.choices[0].message.content
     history[id].append({"role": "assistant", "content": agent_message})
+    print(f"Кому - {user_name} |", agent_message)
     return agent_message
 
 
