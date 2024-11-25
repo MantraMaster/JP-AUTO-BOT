@@ -11,21 +11,18 @@ dp = Dispatcher()
 async def start_cmd(message: types.Message):
     if message.from_user.id not in mistral.history:
         id_user = message.from_user.id
-        mistral.history[id_user] = {"role": "user", "content": " "}
-        print("Добавлен", {message.from_user.id})
-        for i in mistral.history:
-            print(i, mistral.history[i])
+        mistral.history[id_user] = [{"role": "system", "content": mistral.content_edu}]
+        print(mistral.history)
     else:
-        print("Уже существует",{message.from_user.id})
+        print("Уже существует", {message.from_user.id})
     await message.answer('Как к Вам обращаться?')
 
 @dp.message()
 async def question(message: types.Message):
-    mistral.history
+    print(message.from_user.username, message.text)
     id_user = message.from_user.id
     mistral.question = message.text
-    response = mistral.get_chat_response(id_user, mistral.question)
-    print(message.from_user.username, mistral.question)
+    response = mistral.get_chat_response(id_user, message.text)
     await message.answer(response)
 
 async def main() -> None:
@@ -33,4 +30,3 @@ async def main() -> None:
 
 asyncio.run(main())
 
-asdasdasdasd
