@@ -8,6 +8,7 @@ bot = Bot(token="8062628342:AAFd3CfTq8jORec1GFQM8hRcdXuXG2tI_oY")
 dp = Dispatcher()
 
 
+
 @dp.message(CommandStart())
 async def start_cmd(message: types.Message):
     if message.from_user.id not in mistral.history:
@@ -31,16 +32,26 @@ async def question(message: types.Message):
         print(mistral.history)
     print(message.from_user.username, "|", message.text)
     id_user = message.from_user.id
-    mistral.question = message.text
-    response = mistral.get_chat_response(id_user, message.from_user.username, message.text)
-    await bot.send_chat_action(chat_id=id_user, action="typing")
-    await asyncio.sleep(2)
-    await message.answer(response)
+    try:
+        print("Готовим ответ")
+        response = mistral.get_chat_response(id_user, message.from_user.username, message.text)
+        await bot.send_chat_action(chat_id=id_user, action="typing")
+        await asyncio.sleep(2)
+        await message.answer(response)
+
+    except Exception as e:
+        if mistral.index == len(mistral.api_keys):
+            mistral.index == 0
+        else:
+            mistral.index += 1
+            response = mistral.get_chat_response(id_user, message.from_user.username, message.text)
+            await bot.send_chat_action(chat_id=id_user, action="typing")
+            await asyncio.sleep(2)
+            await message.answer(response)
+
     await bot.send_message(chat_id=-1002303909150,
                             text=f"<b>💬 Сообщение от пользователя {message.from_user.id, message.from_user.username}</b>"
                                  f": \n{message.text}", parse_mode="HTML")
-
-
 
 
 async def main() -> None:
